@@ -25,6 +25,12 @@ export function getTrendingMovies() {
   );
 }
 
+export function getTopRatedMovies() {
+  return fetchJsonData(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`,
+  );
+}
+
 export function getMovie(args) {
   const [, idPart] = args.queryKey;
   const { id } = idPart;

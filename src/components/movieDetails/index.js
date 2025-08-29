@@ -5,10 +5,12 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
-import Fab from "@mui/material/Fab";
+import SubjectIcon from "@mui/icons-material/Subject";
+import { Box, Fab } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
+import { Link } from "react-router-dom";
 
 const root = {
   display: "flex",
@@ -65,19 +67,31 @@ const MovieDetails = ({ movie }) => {
           </li>
         ))}
       </Paper>
-      <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() => setDrawerOpen(true)}
+      <Box
         sx={{
           position: "fixed",
           bottom: "1em",
           right: "1em",
         }}
       >
-        <NavigationIcon />
-        Reviews
-      </Fab>
+        <Fab
+          color="secondary"
+          variant="extended"
+          onClick={() => setDrawerOpen(true)}
+        >
+          <NavigationIcon />
+          Reviews
+        </Fab>
+        <Fab
+          color="secondary"
+          variant="extended"
+          component={Link}
+          to={`/movies/${movie.id}/credits`}
+        >
+          <SubjectIcon />
+          Credits
+        </Fab>
+      </Box>
       <Drawer
         anchor="top"
         open={drawerOpen}

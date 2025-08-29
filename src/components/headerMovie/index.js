@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 
-const MovieHeader = (props) => {
+export default function MovieHeader(props) {
   const movie = props.movie;
   const navigate = useNavigate();
 
@@ -40,6 +40,4 @@ const MovieHeader = (props) => {
       </IconButton>
     </Paper>
   );
-};
-
-export default MovieHeader;
+}

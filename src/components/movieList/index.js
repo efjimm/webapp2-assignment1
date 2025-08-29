@@ -2,7 +2,7 @@ import React from "react";
 import Movie from "../movieCard/";
 import Grid from "@mui/material/Grid2";
 
-const MovieList = (props) => {
+export default function MovieList(props) {
   return props.movies.map((m) => (
     <Grid
       key={m.id}
@@ -12,6 +12,4 @@ const MovieList = (props) => {
       <Movie key={m.id} movie={m} action={props.action} />
     </Grid>
   ));
-};
-
-export default MovieList;
+}

@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
-const Header = (props) => {
+export default function Header(props) {
   const title = props.title;
   const navigate = useNavigate();
   return (
@@ -31,6 +31,4 @@ const Header = (props) => {
       </IconButton>
     </Paper>
   );
-};
-
-export default Header;
+}

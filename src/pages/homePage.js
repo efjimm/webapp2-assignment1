@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
 
-function HomePage() {
+export default function HomePage() {
   const { data, error, isLoading, isError } = useQuery("discover", getMovies);
 
   if (isLoading) {
@@ -27,4 +27,3 @@ function HomePage() {
     />
   );
 }
-export default HomePage;

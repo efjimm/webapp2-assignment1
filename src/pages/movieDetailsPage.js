@@ -6,7 +6,7 @@ import { getMovie } from "../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 
-const MoviePage = (props) => {
+export default function MoviePage() {
   const { id } = useParams();
   const {
     data: movie,
@@ -36,6 +36,4 @@ const MoviePage = (props) => {
       )}
     </>
   );
-};
-
-export default MoviePage;
+}

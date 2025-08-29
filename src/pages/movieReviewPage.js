@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import PageTemplate from "../components/templateMoviePage";
 import MovieReview from "../components/movieReview";
 
-const MovieReviewPage = () => {
+export default function MovieReviewPage() {
   let location = useLocation();
   const { movie, review } = location.state;
 
@@ -12,6 +12,4 @@ const MovieReviewPage = () => {
       <MovieReview review={review} />
     </PageTemplate>
   );
-};
-
-export default MovieReviewPage;
+}

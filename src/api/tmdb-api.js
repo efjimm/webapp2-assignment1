@@ -13,9 +13,11 @@ function fetchJsonData(url) {
     });
 }
 
-export function getMovies() {
+export function getMovies(args) {
+  const page = args.queryKey[1].page;
+  console.log(`Fetch page ${page}`);
   return fetchJsonData(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`,
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&page=${page}&language=en-US&include_adult=false&include_video=false`,
   );
 }
 
@@ -39,9 +41,10 @@ export function getTrendingMovies() {
   );
 }
 
-export function getTopRatedMovies() {
+export function getTopRatedMovies(args) {
+  const page = args.queryKey[1].page;
   return fetchJsonData(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`,
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=${page}`,
   );
 }
 

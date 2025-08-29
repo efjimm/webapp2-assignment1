@@ -19,6 +19,20 @@ export function getMovies() {
   );
 }
 
+export function getPersonMovies(args) {
+  const id = args.queryKey[1].id;
+  return fetchJsonData(
+    `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`,
+  );
+}
+
+export function getPerson(args) {
+  const id = args.queryKey[1].id;
+  return fetchJsonData(
+    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`,
+  );
+}
+
 export function getTrendingMovies() {
   return fetchJsonData(
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`,

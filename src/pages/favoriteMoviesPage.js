@@ -7,7 +7,7 @@ import Spinner from "../components/spinner";
 import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
 
-const FavoriteMoviesPage = () => {
+export default function FavoriteMoviesPage() {
   const { favorites: movieIds } = useContext(MoviesContext);
 
   // Create an array of queries and run in parallel.
@@ -45,6 +45,4 @@ const FavoriteMoviesPage = () => {
       }}
     />
   );
-};
-
-export default FavoriteMoviesPage;
+}

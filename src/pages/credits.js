@@ -4,14 +4,17 @@ import PageTemplate from "../components/templateMoviePage";
 import { getMovie, getMovieCredits } from "../api/tmdb-api";
 import { useQueries } from "react-query";
 import Spinner from "../components/spinner";
+import { Link } from "react-router-dom";
 import {
   Grid2 as Grid,
   Card,
   CardHeader,
   CardMedia,
   CardContent,
+  CardActions,
   Typography,
   Divider,
+  Button,
 } from "@mui/material";
 import { StarRate } from "@mui/icons-material";
 import img from "../images/film-poster-placeholder.png";
@@ -52,6 +55,13 @@ function CastCredit({ credit }) {
             </Grid>
           </Grid>
         </CardContent>
+        <CardActions disableSpacing>
+          <Link to={`/person/${credit.id}`}>
+            <Button variant="outlined" size="medium" color="primary">
+              More Info ...
+            </Button>
+          </Link>
+        </CardActions>
       </Card>
     </Grid>
   );
